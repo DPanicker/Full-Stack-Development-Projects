@@ -1,0 +1,35 @@
+<html>
+<head>
+<script type="text/javascript">
+var target;
+var guess_input_text;
+var guess_input;
+var finished = false;
+var guesses = 0;
+var guess;
+var colors = ["blue","brown","magenta","navy","orange","purple","silver","violet","white","yellow"];
+function changeBackground(color) {
+    document.body.style.background = color;
+}
+function do_game() {
+    target = Math.floor(Math.random() * 10);
+    guess_input = colors[target];
+    alert("The Answer is : " + guess_input);
+	while (!finished) {
+    // alert("Use smallcase only");
+    var guess = prompt('What Color am I thinking of \n blue,brown,magenta,navy,orange,purple,silver,violet,white,yellow ? \n \n Can You guess ?');
+    guesses++;
+      if (guess === guess_input) {
+        changeBackground(guess_input);
+        alert('The secret color was ' + guess_input + "\n You took " + guesses + " " + "guesses to figure that out");
+		console.log(guess_input+"random");
+		console.log(guess + "input");
+		finished = true ;
+}
+}
+}
+</script>
+</head>
+<body onload ="do_game()">
+</body>
+</html>
